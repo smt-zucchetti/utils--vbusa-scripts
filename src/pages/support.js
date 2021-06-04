@@ -44,3 +44,60 @@
     
     });
  		   
+
+
+
+
+
+    var boxes = document.querySelectorAll(".shadow-box > .flex > a");
+    boxes.forEach(function(el){
+        
+       el.addEventListener("click", function(){
+           
+           boxes.forEach(function(el2){
+               el2.classList.remove("active");
+           });
+           
+           this.classList.add("active");
+       }); 
+    });
+    
+    $(document).ready(function(){
+        var data_id;
+        $('.shadow-box a').click(function(e){
+            data_id = $(this).data("id");
+            if(data_id !== "google-drive" && data_id !== "external_link"){
+                e.preventDefault();
+    
+                $('.hide-at-first').hide();
+                $('.hide-at-first').each(function(i,e){
+                    var id = $(e).attr('id');
+                    if(id == data_id){
+                        $(e).show();
+                    }
+                });
+            }
+           
+        });
+    });
+    let anchors = document.querySelectorAll("#pod-hotel-mapping-files > a");
+    anchors.forEach(function(el){
+        el.addEventListener("click", function(e){
+             e.preventDefault();
+    
+            var curDataId = this.dataset.id
+
+             document.querySelectorAll("#pod-hotel-mapping-files > div").forEach(function(el){
+                if(el.dataset.id !== curDataId){
+                    el.classList.remove("active"); 
+                }
+             });
+             
+            document.querySelector("div[data-id='" + this.dataset.id + "']").classList.toggle("active");
+        });
+        
+    });
+    
+    
+    
+

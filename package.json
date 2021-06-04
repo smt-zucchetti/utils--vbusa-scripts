@@ -9,8 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "css-loader": "^5.2.6",
     "glob": "^7.1.7",
+    "jquery": "^3.6.0",
     "path": "^0.12.7",
+    "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   }
